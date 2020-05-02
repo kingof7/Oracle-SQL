@@ -1,0 +1,34 @@
+1. 오라클 설치 후 CMD창   
+	C:>sqlplus
+	Enter user-name: system
+	Enter password:1234
+
+2. HR 권한주기
+	SQL> alter user hr account unlock;			
+	SQL> alter user hr identified by 1234;			
+	SQL> conn hr/1234				
+	SQL> select * from tab;
+	SQL> exit
+
+	C:>sqlplus
+	Enter user-name: hr
+	Enter password:1234
+	SQL> select * from tab;
+
+3. 사용자계정 생성, 삭제, 권한주기
+     	3-1) 계정생성 
+		SQL> create user java identified by 1234;
+			
+	3-2) 접속 권한 부여
+		SQL> grant resource, connect to java;
+
+	3-3) 시스템 권한 부여(테이블, 뷰, 시퀀스 생성)
+		SQL> grant create table, create view, create sequence to java;	
+	
+	3-4) 접속
+		SQL> conn java/1234					
+		SQL> select * from tab;					
+	
+	3-5) 계정삭제	
+		SQL> drop user java cascade;
+

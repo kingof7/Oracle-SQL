@@ -1,0 +1,12 @@
+CREATE TABLE grade(
+  score_name VARCHAR2(10) UNIQUE,
+  score_from NUMBER(3),
+  socre_to NUMBER(3)
+);
+
+INSERT INTO grade VALUES('A', 90, 100);
+INSERT INTO grade VALUES('B', 80, 89);
+INSERT INTO grade VALUES('C', 70, 79);
+INSERT INTO grade VALUES('D', 60, 69);
+INSERT INTO grade VALUES('E', 50, 59);
+INSERT INTO grade VALUES('F', 0, 49);
